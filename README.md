@@ -52,7 +52,6 @@ Overall:
 
 <!-- Instructions
 -----
-
 1. Fill out every `TODO` section throughout the codebase. We suggest going in order of the following:
     * Connect to a database in `config.py`. A project submission that uses a local database connection is fine.
     * Using SQLAlchemy, set up normalized models for the objects we support in our web app in the Models section of `app.py`. Check out the sample pages provided at /artists/1, /venues/1, and /shows for examples of the data we want to model, using all of the learned best practices in database schema design. Implement missing model properties and relationships using database migrations via Flask-Migrate.
@@ -90,7 +89,11 @@ pip install -r requirements.txt
 ```
 export FLASK_APP=myapp
 export FLASK_ENV=development # enables debug mode
-python3 app.py
+python app.py
+
+flask db init
+flask db migrate -m "initial migration"
+flask db upgrade
 ```
 
 3. **Verify on the Browser**<br>
